@@ -17,4 +17,30 @@ public class AdminUsuario {
         this.data.add(new Usuario("47254512", "Helen", "Alva", "Marquez", "halva", "halva@upc.com", "24/05/2012", "Analista de RRHH", "usuario", "123456"));
     
     }
+    
+    public void loginUser(String user, String pass) {
+        int cond=0;
+        
+        if (user.equals("") || pass.equals("")){
+            System.out.println("No Ha ingresado Usuario y/o contraseña...");
+            //return false;
+        }
+        
+        for (int i = 0; i < this.data.size(); i++){
+            String uname=data.get(i).getUsername();
+            String pwd=data.get(i).getPass();
+            if (user.equals(uname) || pass.equals(pwd)){
+                System.out.println("Usuario Correcto");
+                cond=1;
+                //return true;
+                break;
+            } 
+            
+        }
+        if (cond == 0){
+            System.out.println("No existe el usuario ingresado...");
+            //return false;
+        }
+        
+    }
 }
